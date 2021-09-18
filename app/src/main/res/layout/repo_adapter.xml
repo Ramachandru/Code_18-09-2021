@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="repoInstance"
+            type="com.ram.myapplication.model.Repose" />
+
+        <variable
+            name="adapter"
+            type="com.ram.myapplication.RepoAdapter" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="5dp"
+        android:padding="10dp"
+        app:cardBackgroundColor="#00FFBB"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->adapter.onClickedData(repoInstance.full_name)}"
+                android:text="@{repoInstance.full_name}"
+                android:textColor="@color/black"
+                android:textSize="16sp"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->adapter.onClickedData(repoInstance.node_id)}"
+                android:text="@{repoInstance.node_id}"
+                android:textColor="#ffff0000"
+                android:textSize="16sp"></TextView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
