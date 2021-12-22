@@ -9,5 +9,6 @@ class APiCall {
             .baseUrl(ApiInterface.BASEURL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+            .create(ApiInterface::class.java)
     }
 }
